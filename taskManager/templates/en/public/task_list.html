@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Task list {% endblock %}
+{% block h1 %} Task list {% endblock %}
+{% block body %}
+
+<div>
+	{% for task in task_list %}
+	<ul>
+		<li> <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a></li>
+		<li>{{ task.description }}</li>
+	</ul>
+	{% endfor %}
+
+	{% if is_paginated %}
+	<div class="pagination">
+		<span>
+			{% if page_obj.has_previous %}
+			<a href="{% url "task_list" %}?page={{ page_obj.previous_page_number }}">Previous</a>
+			{% endif %}
+			<span style="margin-left:15px;margin-right:15px;">
+				Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages}}.
+			</span>
+			{% if page_obj.has_next %}
+			<a href="{% url "task_list" %}?page={{ page_obj.next_page_number }}">Next</a>
+			{% endif %}
+		</span>
+	</div>
+	{% endif %}
+
+	{% endblock %}
+</div>

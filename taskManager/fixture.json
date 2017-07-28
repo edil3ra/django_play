@@ -1,0 +1,149 @@
+[
+{
+   "model": "taskManager.userprofile",
+   "pk": 1,
+   "fields": {
+      "name": "master",
+      "login": "master",
+      "password": "d100139",
+      "phone": null,
+      "born_date": null,
+      "last_connection": null,
+      "email": "master@gmail.com",
+      "years_seniority": 1,
+      "date_created": "2017-07-27"
+   }
+},
+{
+   "model": "taskManager.userprofile",
+   "pk": 2,
+   "fields": {
+      "name": "vince",
+      "login": "vincent",
+      "password": "hello",
+      "phone": "0499316385",
+      "born_date": "2017-07-27",
+      "last_connection": "2017-07-27T09:04:15Z",
+      "email": "houbavince@gmail.com",
+      "years_seniority": 1,
+      "date_created": "2017-07-27"
+   }
+},
+{
+   "model": "taskManager.project",
+   "pk": 1,
+   "fields": {
+      "title": "",
+      "description": "",
+      "client_name": ""
+   }
+},
+{
+   "model": "taskManager.project",
+   "pk": 2,
+   "fields": {
+      "title": "project2",
+      "description": "my second project",
+      "client_name": "client"
+   }
+},
+{
+   "model": "taskManager.project",
+   "pk": 3,
+   "fields": {
+      "title": "project2",
+      "description": "content of the second project",
+      "client_name": "myself"
+   }
+},
+{
+   "model": "taskManager.supervisor",
+   "pk": 1,
+   "fields": {
+      "specialisation": "master dev"
+   }
+},
+{
+   "model": "taskManager.developer",
+   "pk": 2,
+   "fields": {
+      "Supervisor": 1
+   }
+},
+{
+   "model": "taskManager.task",
+   "pk": 1,
+   "fields": {
+      "title": "task-1",
+      "description": "The first task",
+      "importance": 0,
+      "project": 2
+   }
+},
+{
+   "model": "taskManager.task",
+   "pk": 2,
+   "fields": {
+      "title": "task-2",
+      "description": "The second task",
+      "importance": 1,
+      "project": 3
+   }
+},
+{
+   "model": "taskManager.task",
+   "pk": 3,
+   "fields": {
+      "title": "task-3",
+      "description": "The third task",
+      "importance": 2,
+      "project": 3
+   }
+},
+{
+   "model": "taskManager.task",
+   "pk": 4,
+   "fields": {
+      "title": "task-4",
+      "description": "The fourth task",
+      "importance": 0,
+      "project": 3
+   }
+},
+{
+   "model": "taskManager.developerworktask",
+   "pk": 1,
+   "fields": {
+      "developer": 2,
+      "task": 1,
+      "time_elapsed": null
+   }
+},
+{
+   "model": "taskManager.developerworktask",
+   "pk": 2,
+   "fields": {
+      "developer": 2,
+      "task": 2,
+      "time_elapsed": null
+   }
+},
+{
+   "model": "taskManager.developerworktask",
+   "pk": 3,
+   "fields": {
+      "developer": 2,
+      "task": 3,
+      "time_elapsed": null
+   }
+},
+{
+   "model": "taskManager.developerworktask",
+   "pk": 4,
+   "fields": {
+      "developer": 2,
+      "task": 4,
+      "time_elapsed": null
+   }
+}
+]

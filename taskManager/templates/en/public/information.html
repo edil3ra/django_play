@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title_html %} index title {% endblock %}
+{% block h1 %} Hello index {% endblock %}
+{% block body %}
+
+<span>
+	{% if years < 10 %}
+	You are a child
+	{% elif years < 18 %}
+	You are a teenager
+	{% else %}
+	You are an adult!
+	{% endif %}
+</span>
+<ul>
+	{% for city in cities %}
+	<li> {{city}} </li>
+	{% endfor %}
+</ul>
+
+they {{ 3|pluralize:"is,are" }} | {{ cities | length }} citie{{cities | length | pluralize}}
+<p class="red">
+	{{xss | safe}}
+</p>
+
+<a href="{% url 'connection' %}"> Connection</a>
+
+
+
+{% endblock %}
+

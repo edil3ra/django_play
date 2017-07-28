@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Detail developer {% endblock %}
+{% block h1 %} Detail developer {% endblock %}
+{% block body %}
+
+<h4>
+	{{ developer.name }}
+</h4>
+<span>Login : {{ developer.login }}</span><br />
+<span>Email : {{ developer.email }}</span>
+<h3>Tasks</h3>
+<table>
+	{% for task in tasks_dev %}
+	<tr>
+		<td>{{ task.title }}</td>
+		<td>{{ task.importence }}</td>
+		<td>{{ task.project }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

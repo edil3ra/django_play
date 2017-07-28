@@ -1,0 +1,7 @@
+* select
+  #+BEGIN_SRC python
+from taskmanager.models import Task, Developer, Supervisor, Project
+task = new 
+
+  #+END_SRC
+

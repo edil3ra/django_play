@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} project list {% endblock %}
+{% block h1 %} Project list {% endblock %}
+{% block body %}
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Client name</th>
+	</tr>
+	{% for project in project_list %}
+	<tr>
+		<td>{{ project.title }}</td>
+		<td>{{ project.description }}</td>
+		<td>{{ project.client_name }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+{% endblock %}

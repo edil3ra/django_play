@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Index {% endblock %}
+{% block h1 %} Index {% endblock %}
+{% block body %}
+<h2> {{ actions }} </h2>
+
+<dl>
+	{% for project in projects %}
+	<dt>{{ project.title }}</dt>
+	<dd>{{ project.description }}</dd>
+	<dd>{{ project.client_name }}</dd>
+	{% endfor %}
+	<ul>
+		<li><a href="{% url 'create_project' %}">Create Project</a></li>
+		<li><a href="{% url 'create_task' %}">Create Task</a></li>
+	</ul>
+
+	<ul>
+		<li><a href="{% url 'project_list' %}">List Project</a></li>
+		<li><a href="{% url 'task_list' %}">List Task</a></li>
+	</ul>
+
+
+</dl>
+
+{% endblock %}

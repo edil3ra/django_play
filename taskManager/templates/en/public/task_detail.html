@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %} Detail Task {% endblock %}
+{% block h1 %} Detail Task {% endblock %}
+{% block body %}
+
+<h4>
+	{{ task.title }}
+</h4>
+<table>
+	<tr>
+		<td>Project : {{ task.project }}</td>
+		<td>Developer :
+			{% for developer  in developers.values %}
+			<a href="{% url 'developer_detail' developer.id%}"> {{developer.name}}</a>
+			{% endfor %}
+			
+		</td>
+	</tr>
+	<tr>
+		<td>Importance : {{ task.importance }}</td>
+		<td>Time elapsed : {{ task.time_elapsed }}</td>
+	</tr>
+</table>
+<p>
+	{{ task.description }}
+</p>
+<p>
+	<a href="{% url 'task_list' %}" >Back</a>
+</p>
+
+{% endblock %}

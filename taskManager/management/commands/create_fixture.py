@@ -23,8 +23,8 @@ class Command(BaseCommand):
 def create():
     admin = User.objects.create_superuser(
         username='edil3ra',
-        email='vincent.houba@gmail.com',
-        password='d100139')
+        email='edil3ra@gmail.com',
+        password='password')
     user1 = User.objects.create_user(
         username='supervisor',
         email='supervisor@gmail.com',
@@ -32,12 +32,12 @@ def create():
         is_active=True)
     user2 = User.objects.create_user(
         username='vince',
-        email='vincent.houba@gmail.com',
-        password='d100139',
+        email='private@gmail.com',
+        password='password',
         is_active=True)
     user3 = User.objects.create_user(
         username='fabrice',
-        email='farbrice.ouaro@gmail.com',
+        email='private.ouaro@gmail.com',
         password='password',
         is_active=True)
 

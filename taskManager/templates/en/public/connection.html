@@ -1,11 +1,19 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8"/>
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Hello World</h1>
-		<a href="{% url 'index' %}">Back</a>
-	</body>
-</html>
+{% extends 'base.html' %}
+{% block title_html %} index title {% endblock %}
+{% block h1 %} Hello index {% endblock %}
+{% block body %}
+
+{% if user.is_authenticated %}
+<h1> You are connected </h1>
+<p>
+	Your email: {{ user.email }}
+</p>
+{% else %}
+<form action="{% url 'connection' %}" method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input name="" type="submit" value="Login"/>
+</form>
+{% endif %}
+
+{% endblock %}

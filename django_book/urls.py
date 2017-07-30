@@ -18,12 +18,23 @@ from django.contrib import admin
 from django.views.generic import CreateView, ListView
 from taskManager.models import Project, Task
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 from taskManager import views as viewsTask
+
 
 urlpatterns = [
     url(r'^$', viewsTask.index, name='index'),
-    url(r'^information/$', viewsTask.connection, name='information'),
+    url(r'^information/$', viewsTask.information, name='information'),
     url(r'^connection/$', viewsTask.connection, name='connection'),
+    url(r'^logout/$', viewsTask.logout, name='logout'),
+    url(r'^public_empty/$', viewsTask.public_empty, name='public_empty'),
+
+    url(r'^taskL/$', viewsTask.taskL, name='taskL'),
+    url(r'^taskD/(?P<pk>\d+)$', viewsTask.taskD, name='taskD'),
+    
+    url(r'^createS', viewsTask.createS, name='createS'),
+    url(r'^createD', viewsTask.CreateD.as_view(), name='createD'),
+    
     url(r'^admin/', admin.site.urls),
     url(r'^create_project/$',
         CreateView.as_view(
@@ -49,7 +60,7 @@ urlpatterns = [
         name='project_list'),
     url(r'^task_list$', viewsTask.TaskListView.as_view(), name='task_list'),
     url(r'^task_detail/(?P<pk>\d+)$',
-        viewsTask.TaskDetailView.as_view(),
+        login_required(viewsTask.TaskDetailView.as_view()),
         name='task_detail'),
     url(r'^developer_detail/(?P<pk>\d+)$',
         viewsTask.DeveloperDetailView.as_view(),

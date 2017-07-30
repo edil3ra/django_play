@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title_html %} task list {% endblock %}
+{% block h1 %} Task list {% endblock %}
+{% block body %}
+
+<div>
+	<h3>Current task</h3>
+	<ol>
+		<li>{{ task.title }}</li>
+		<li>{{ task.description }}</li>
+		<li>{{ task.importance }}</li>
+	</ol>
+</div>
+
+{% for task in tasks %}
+<ul>
+	<li>{{ task.title }}</li>
+	<li>{{ task.description}} </li>
+	<li>{{ task.importance}} </li>
+	<li><a href="{% url 'taskD' task.id %}">detail</a></li>
+	<li> Project
+		<ul>
+			<li>{{ task.project.title }} </li>		
+			<li>{{ task.project.description }} </li>		
+		</ul>
+	</li>
+
+</ul>
+{% endfor %}
+	
+
+
+{% endblock %}

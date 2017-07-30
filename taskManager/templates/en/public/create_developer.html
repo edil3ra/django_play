@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title_html %} Create supervisor {% endblock %}
+{% block h1 %} Create supervisor {% endblock %}
+{% block body %}
+
+<form action="{% url 'createS' %}" method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<input name="submit" type="submit" value="Create"/>
+</form>
+
+{% endblock %}

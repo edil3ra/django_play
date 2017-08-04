@@ -1,0 +1,23 @@
+{% extends 'baseCookbook.html' %}
+{% block title %} Index {% endblock %}
+{% block body %}
+
+
+<div class="row">
+	<nav>
+		<div class="top-nav">
+			<div class="nav-wrapper">
+				<h2 class="red lighten-2"> <a class="page-title" href="#">Cookbook</a> </h2>
+			</div>
+		</div>
+	</nav>
+	<form method="post" action="" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">{% trans "Save" %}</button>
+	</form>
+</div>
+
+
+
+{% endblock %}

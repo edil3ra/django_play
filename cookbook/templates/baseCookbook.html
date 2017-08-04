@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+	<head>
+		{% block css%}
+		<link href="{% static 'css/materialize.css' %}" rel="stylesheet"/>
+		{% endblock %}
+
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>
+			{% block title_html %} Default tuheonthuo {% endblock %}
+		</title>
+	</head>
+	<body>
+		<div class="container">
+			{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+				<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+			{% block body %} {% endblock %}
+		</div>
+
+		{% block script %}
+		
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/materialize.js' %}"></script>
+		<script src="{% static 'js/initialize.js' %}"></script>
+		{% endblock %}
+	</body>
+</html>

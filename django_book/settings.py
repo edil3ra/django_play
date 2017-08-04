@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
     'taskManager',
-    
+    'cookbook',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +62,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'taskManager/templates')
+            os.path.join(BASE_DIR, 'taskManager/templates'),
+            os.path.join(BASE_DIR, 'cookbook/templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -114,6 +115,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ("en-us", "English"),
+    ("de", "Deutsch"),
+    ("fr", "Français"),
+    ("lt", "Lietuvi kalba"),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -131,5 +139,6 @@ LOGIN_URL = 'connection'
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static/'
 STATICFILES_DIRS = (
-os.path.join(BASE_DIR, 'taskManager/static'),
+    os.path.join(BASE_DIR, 'taskManager/static'),
+    os.path.join(BASE_DIR, 'cookbook/static')
 )

@@ -1,0 +1,12 @@
+{% extends 'baseCookbook.html' %}
+{% block title %} Index {% endblock %}
+{% block body %}
+
+
+<h2> Cookbook </h2>
+<ul>
+	<li> <a href="{% url 'message' %}"> Messages</a> </li>
+	<li> <a href="{% url 'notes' %}"> Notes</a> </li>
+</ul>
+
+{% endblock %}

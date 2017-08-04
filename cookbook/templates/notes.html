@@ -1,0 +1,23 @@
+{% extends 'baseCookbook.html' %}
+{% block title %} Notes {% endblock %}
+{% block body %}
+<h2> Cookbook </h2>
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Title</th>
+		<th>Description</th>		
+		<th>created</th>		
+		<th>updated</th>		
+	</tr>
+	{% for note in note_list %}
+	<tr>
+		<td><a href="{% url 'note' note.id %}">{{ note.id }}</a></td>
+		<td>{{ note.title }}</td>
+		<td>{{ note.description }}</td>
+		<td>{{ note.created | date:"M d, Y" }}</td>
+		<td>{{ note.updated | date:"M d, Y" }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endblock %}

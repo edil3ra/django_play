@@ -20,11 +20,12 @@ from taskManager.models import Project, Task
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from taskManager import views as viewsTask
-
+from cookbook import urls as cookbook_urls
 
 urlpatterns = [
     url(r'^$', viewsTask.index, name='index'),
-    url(r'^information/$', viewsTask.information, name='information'),
+    url(r'^cookbook/', include(cookbook_urls)),
+    url(r'^information/', viewsTask.information, name='information'),
     url(r'^connection/$', viewsTask.connection, name='connection'),
     url(r'^logout/$', viewsTask.logout, name='logout'),
     url(r'^public_empty/$', viewsTask.public_empty, name='public_empty'),
